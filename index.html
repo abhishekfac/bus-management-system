@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2nd QUESTION</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-image: url(bus.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: rgb(124, 114, 114);
+    }
+
+    .data {
+      height: 600px;
+      width: 90%;
+      padding-left: 20px;
+      display: inline-block;
+    }
+
+    .data1 {
+      height: 100vh;
+      width: 90%;
+      background-color: rgba(0, 0, 0, 0.4);
+      margin-left: 8%;
+      margin-top: 50px;
+      padding: 20px;
+      display: inline-block;
+    }
+
+
+    .table {
+      width: 100%;
+      margin-top: 20px;
+      font-family: calibri;
+    }
+
+    th,
+    td {
+      height: 40px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .form {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .form1 {
+      margin-top: 20px;
+    }
+
+    input {
+      height: 40px;
+      width: 17%;
+      text-indent: 15px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    button {
+      padding: 10px;
+    }
+
+    h1 {
+      color: rgb(46, 24, 124);
+    }
+
+    .modal {
+      width: 70%;
+      height: 70vh;
+      margin-left: 5%;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      display: none;
+    }
+
+    .modalchild {
+      height: 270px;
+      width: 80%;
+      background-color: white;
+      margin-left: 5%;
+      margin-top: 40px;
+      display: inline-block;
+      padding: 30px;
+
+    }
+
+    table {
+      border-color: beige;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="data">
+    <div class="data1">
+      <div class="modal" onclick="hideModal(event)">
+        <div class="modalchild">
+          <div class="form">
+            <form onsubmit="updatebus(event)">
+              <input type="text" required placeholder="Name" id="upname" />
+              <input type="text" required placeholder="Source" id="upsource" />
+              <input type="text" required placeholder="Destination" id="updestination" />
+              <input type="text" required placeholder="Number" id="upnumber" />
+              <input type="text" required placeholder="Passanger Capacity" id="uppassangerCapacity"
+                style="width: 35%;" />
+              <button type="submit">Update Bus List</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <h1>Bus Management  System</h1>
+      <hr>
+      <div class="form">
+        <form onsubmit="addbus(event)">
+          <input type="text" required placeholder="Name" id="name" />
+          <input type="text" required placeholder="Source" id="source" />
+          <input type="text" required placeholder="Destination" id="destination" />
+          <input type="text" required placeholder="Number" id="number" />
+          <input type="text" required placeholder="Passanger Capacity" id="passangerCapacity" />
+          <button type="submit" style="padding: 10px; width: 10%; background-color: rgb(11, 73, 70); color: white;">Add
+            Bus</button>
+        </form>
+      </div>
+      <div class="form1">
+        <input type="text" placeholder="Search Source" id="searchS" onkeyup="searchS()" />
+      </div>
+
+      <input type="text" placeholder="Search Destination" id="searchD" onkeyup="searchD()" />
+
+      <table border="1" class="table" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Number</th>
+            <th>PassangerCapacity</th>
+            <th style="width: 25%;">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="tdata" id="tdata"></tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
